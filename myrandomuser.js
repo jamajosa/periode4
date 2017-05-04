@@ -15,10 +15,10 @@ app.post('/', function(request, response) {
 app.put('/', function(request, response) {
     response.send('Hello Avans, PUT request received!');
 })
-app.all('*', function(request, response) {
+app.get('*', function(request, response) {
     response.status(404);
     response.send('404 - Not found');
 })
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log('Server app is listening on port 3000');
 })
